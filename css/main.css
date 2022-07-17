@@ -11,6 +11,10 @@ a {
   text-decoration: none;
 }
 
+.container {
+  padding: 15px;
+}
+
 footer {
   padding-top: 20px;
 }
