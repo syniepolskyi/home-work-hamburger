@@ -98,6 +98,7 @@ h3 {
   overflow: auto;
   width: 100%;
   max-height: 240px;
+  background-color: #fff;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   z-index: 1;
 }
@@ -117,6 +118,7 @@ h3 {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+  color: #22f;
 }
 
 .topping-input-container {
