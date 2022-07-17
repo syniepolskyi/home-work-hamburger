@@ -1,4 +1,4 @@
-Hamburger.renderMenu = function(){
+Hamburger.outputMenu = function(){
   const tableToppingsBody = document.querySelector(".table-toppings tbody");
   const htmlStuffing = Object.keys(this.stuffing).map((k) => {
     return `<tr><td>${this.stuffing[k].type}</td>`
