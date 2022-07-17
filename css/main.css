@@ -135,6 +135,10 @@ button#submitorder {
   border-radius: 5px;
 }
 
+button[disabled] {
+  color: #999;
+}
+
 button.remove {
   padding: 2px;
   width: 20px;
