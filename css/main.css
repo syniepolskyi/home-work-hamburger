@@ -136,7 +136,7 @@ button#submitorder {
 }
 
 button[disabled] {
-  color: #999;
+  color: #999 !important;
 }
 
 button.remove {
