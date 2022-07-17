@@ -90,6 +90,7 @@ h3 {
 
 .topping-input-container {
   display: flex;
+  align-items: center;
 }
 
 .menu-info-container{
@@ -112,8 +113,11 @@ input[type="text"], input[type="number"] {
 }
 
 button#addtopping {
-  width: 20px;
-  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 23px;
+  height: 23px;
   font-family: 'Roboto';
   font-size: 12px;
   font-weight: 400;
