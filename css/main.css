@@ -121,6 +121,10 @@ h3 {
   color: #22f;
 }
 
+.autocomplete-list-item a:hover {
+  background-color: #eef;
+}
+
 .topping-input-container {
   display: flex;
   align-items: center;
