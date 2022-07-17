@@ -40,7 +40,7 @@ footer p {
 
 .main-flex-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -53,9 +53,13 @@ h3 {
   text-align: center;
 }
 
+.order-form-container, .menu-info-container {
+  background-color: #f0f0f0;
+}
+
 .order-form-main-container {
   display: flex;
-  gap: 5px;
+  gap: 50px;
   flex-wrap: wrap;
 }
 
@@ -76,13 +80,17 @@ h3 {
   text-align: right;
 }
 
+.form-group {
+  margin-top: 10px;
+}
+
 .topping-input-container {
   display: flex;
 }
 
 .menu-info-container{
   display: flex;
-  justify-content: space-around;
+  gap: 50px;
   flex-wrap: wrap;
 }
 
@@ -90,6 +98,7 @@ input[type="text"], input[type="number"] {
   font-family: 'Roboto';
   font-size: 12px;
   font-weight: 400;
+  width: 100px;
   height: 20px;
   border: 1px solid #aaa;
 }
@@ -114,7 +123,7 @@ button#submitorder {
   font-size: 12px;
   font-weight: 400;
   color: #000;
-  background-color: #767677;
+  background-color: #FCC746;
   border: 1px solid #aaa;
   border-radius: 5px;
 }
