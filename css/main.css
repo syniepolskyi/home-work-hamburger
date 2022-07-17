@@ -112,6 +112,15 @@ input[type="text"], input[type="number"] {
   border: 1px solid #aaa;
 }
 
+input.error {
+  border: 1px solid #a22 !important;
+  backround-color: #f99;
+}
+
+input.success {
+  border: 1px solid #2a2 !important;
+}
+
 button#addtopping {
   display: flex;
   justify-content: center;
