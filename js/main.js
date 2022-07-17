@@ -53,6 +53,7 @@ function renderMenu(){
       +`<td>${Hamburger.sizes[k].ccal}</td></tr>`;
   }).join('');
   tableSizesBody.insertAdjacentHTML("beforeend",htmlSizes);
+  tableToppingsBody.insertAdjacentHTML("beforeend",htmlStuffing);
 }
 
 //
