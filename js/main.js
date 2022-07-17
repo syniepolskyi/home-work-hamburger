@@ -1,8 +1,17 @@
 class Hamburger {
   static sizes = {
-    S: 200,
-    L: 300,
-    M: 400,
+    S: {
+      price: 200,
+      ccal: 500
+    },
+    L: {
+      price: 300,
+      ccal: 700
+    },
+    M: {
+      price: 400,
+      ccal: 1000
+    }
   }
   static stuffing = {
     STUFFING_SALAD: {
