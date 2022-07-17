@@ -121,7 +121,7 @@ h3 {
   color: #22f;
 }
 
-.autocomplete-list-item a:hover {
+.autocomplete-list-item a:hover div {
   background-color: #eef;
 }
 
