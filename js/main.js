@@ -38,3 +38,23 @@ class Hamburger {
   
   
 }
+
+function renderMenu(){
+  const tableToppingsBody = document.querySelector(".table-toppings tbody");
+  const tableSizesBody = document.querySelector(".table-sizes tbody");
+  const htmlStuffing = Object.keys(Hamburger.stuffing).map((k) => {
+    return `<tr><td>${Hamburger.stuffing[k].type}</td>`
+      +`<td>${Hamburger.stuffing[k].price}</td>`
+      +`<td>${Hamburger.stuffing[k].ccal}</td></tr>`;
+  }).join('');
+  const htmlSizes = Object.keys(Hamburger.sizes).map((k) => {
+    return `<tr><td>${k}</td>`
+      +`<td>${Hamburger.sizes[k].price}</td>`
+      +`<td>${Hamburger.sizes[k].ccal}</td></tr>`;
+  }).join('');
+  tableSizesBody.insertAdjacentHTML("beforeend",htmlSizes);
+}
+
+//
+
+renderMenu();
