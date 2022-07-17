@@ -1,4 +1,9 @@
 class Hamburger {
+  static sizes = {
+    S: 200,
+    L: 300,
+    M: 400,
+  },
   static stuffing = {
     STUFFING_SALAD: {
       type: "STUFFING SALAD",
