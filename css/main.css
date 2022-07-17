@@ -56,6 +56,7 @@ h3 {
 
 .order-form-container, .menu-info-container {
   background-color: #f0f0f0;
+  padding: 10px;
 }
 
 .order-form-main-container {
