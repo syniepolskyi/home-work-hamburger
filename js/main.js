@@ -4,11 +4,11 @@ class Hamburger {
       price: 200,
       ccal: 500
     },
-    L: {
+    M: {
       price: 300,
       ccal: 700
     },
-    M: {
+    L: {
       price: 400,
       ccal: 1000
     }
