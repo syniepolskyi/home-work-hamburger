@@ -230,9 +230,9 @@ button {
   transition: 0.25s;
 }
 
-button:active {
+button:hover, button:focus {
   animation: pulse 1s;
-  box-shadow: 0 0 0 2em transparent;
+  box-shadow: 0 0 0 1em transparent;
 }
 
 @keyframes pulse {
