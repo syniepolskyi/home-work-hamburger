@@ -197,6 +197,10 @@ button#addtopping {
   border-radius: 50%;
 }
 
+button#addtopping:after {
+  border-radius: 50%;
+}
+
 button#submitorder {
   margin-top: 20px;
   padding: 4px;
@@ -208,6 +212,10 @@ button#submitorder {
   color: #000;
   background-color: #FCC746;
   border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+button#submitorder:after {
   border-radius: 5px;
 }
 
@@ -231,6 +239,10 @@ button.remove {
   border-radius: 5px;
 }
 
+button.remove:after {
+  border-radius: 5px;
+}
+
 button{
   position: relative;
   cursor: pointer;
@@ -239,11 +251,10 @@ button{
   user-select:none;
 }
 
-.button:after {
+button:after {
   content: "";
   display: block;
   position: absolute;
-  border-radius: 4em;
   left: 0;
   top:0;
   width: 100%;
@@ -256,7 +267,6 @@ button{
 button:active:after {
   box-shadow: 0 0 0 0 #FCC746;
   position: absolute;
-  border-radius: 3em;
   left: 0;
   top:0;
   opacity: 1;
