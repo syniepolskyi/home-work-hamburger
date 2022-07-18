@@ -63,7 +63,8 @@ h3 {
 
 .order-form-main-container {
   display: flex;
-  gap: 50px;
+  gap: 10px;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -141,7 +142,8 @@ h3 {
 
 .menu-info-container{
   display: flex;
-  gap: 50px;
+  gap: 10px;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
