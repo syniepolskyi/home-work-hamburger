@@ -103,6 +103,10 @@ h3 {
   z-index: 1;
 }
 
+.form-group:not(:focus-within) .autocomplete-list-container {
+  display: none;
+}
+
 .autocomplete-list {
   list-style: none;
   margin: 0;
