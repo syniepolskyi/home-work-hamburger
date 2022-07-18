@@ -122,7 +122,9 @@ h3 {
 }
 
 .autocomplete-list-item a:hover div {
-  min-height: 23px;
+  height: 23px;
+  max-height: 43px;
+  overflow: auto;
   background-color: #eef;
 }
 
