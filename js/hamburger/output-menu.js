@@ -11,7 +11,7 @@ Hamburger.outputMenu = function(){
   //
   const tableSizesBody = document.querySelector(".table-sizes tbody");
   const htmlSizes = Object.keys(this.sizes).map((k) => {
-    return `<tr><td>${k}</td>`
+    return `<tr><td>${this.sizes[k].name}</td>`
       +`<td>${this.sizes[k].price}</td>`
       +`<td>${this.sizes[k].ccal}</td></tr>`;
   }).join('');
