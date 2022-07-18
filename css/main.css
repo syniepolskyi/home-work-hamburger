@@ -136,8 +136,7 @@ h3 {
 }
 
 .topping-input-container {
-  display: flex;
-  align-items: center;
+  position: relative;
 }
 
 .menu-info-container{
@@ -170,6 +169,10 @@ input.success {
 }
 
 button#addtopping {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
