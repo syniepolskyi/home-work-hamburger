@@ -121,11 +121,13 @@ h3 {
   color: #22f;
 }
 
-.autocomplete-list-item a:hover div {
-  height: 23px;
-  max-height: 43px;
+.autocomplete-list-item a div {
+  min-height: 23px;
   overflow: auto;
-  background-color: #eef;
+}
+
+.autocomplete-list-item a:hover div {
+  background-color: yellow;
 }
 
 .topping-input-container {
