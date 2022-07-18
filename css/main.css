@@ -42,7 +42,6 @@ footer p {
 
 .main-flex-container {
   display: flex;
-  gap: 50px;
   justify-content: space-around;
   flex-wrap: wrap;
 }
@@ -54,6 +53,10 @@ h3 {
   font-weight: 700;
   font-size: 14px;
   text-align: center;
+}
+
+.order-form-container {
+  margin-right: 10px;
 }
 
 .order-form-container, .menu-info-container {
