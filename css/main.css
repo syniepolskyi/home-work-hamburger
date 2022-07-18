@@ -114,9 +114,8 @@ h3 {
 }
 
 .autocomplete-list-item {
-  margin-top: 5px;
-  margin-bottom: 0;
-  padding: 0;
+  margin: 0;
+  padding: 3px;
   border-bottom: 1px solid #eee;
   font-family: 'Roboto';
   font-style: normal;
