@@ -115,7 +115,7 @@ h3 {
 
 .autocomplete-list-item {
   margin: 0;
-  padding: 3px;
+  padding: 0;
   border-bottom: 1px solid #eee;
   font-family: 'Roboto';
   font-style: normal;
@@ -126,6 +126,7 @@ h3 {
 
 .autocomplete-list-item a div {
   min-height: 23px;
+  padding: 3px;
   overflow: auto;
 }
 
