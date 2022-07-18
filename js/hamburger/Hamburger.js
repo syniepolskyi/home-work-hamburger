@@ -1,14 +1,17 @@
 class Hamburger {
   static sizes = {
     S: {
+      name: "SMALL",
       price: 200,
       ccal: 500
     },
     M: {
+      name: "MEDIUM",
       price: 300,
       ccal: 700
     },
     L: {
+      name: "LARGE",
       price: 400,
       ccal: 1000
     }
