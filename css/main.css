@@ -281,4 +281,7 @@ button:active {
   top: 1px;
 }
 
+.whaat > ol > li:not(:last-child) {
+  margin-bottom: 10px;
+}
 
