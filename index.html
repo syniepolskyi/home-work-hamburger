@@ -32,7 +32,7 @@
           <div class="order-form-container">
               <h3>Your order</h3>
               <div class="order-form-main-container">
-                  <form class="order-form">
+                  <div class="order-form">
                       <div class="form-group">
                           <label for="size">Size:</label>
                           <input type="text" id="size" name="size" spellcheck=false autocorrect="off" autocomplete="off" />
@@ -73,7 +73,7 @@
                       <div class="form-submit">
                           <button type="submit" id="submitorder" disabled>Make order</button>
                       </div>
-                  </form>
+                  </div>
                   <div class="order-form-info">
                       <h3>Order info</h3>
                       <table class="table order-table">
@@ -147,18 +147,18 @@
                       Якщо поле стає порожнє треба додати в .autocomplete-list всі імена Hamburger.sizes.
                   </li>
                   <li>
-                      При натисканні на посилання 
-                        одного із елементів .autocomplete-list в полі вводу #size має встановитися value = Hamburger.sizes[chosenSize].name (chosenSize - data-size в посиланні), 
-                        має виникнути діалог у разі, якщо tbody таблиці .order-table не порожнє - чи продовжувати далі (у разі скасування більше нічого не виконувати),
-                        блок з .autocomplete-list зникнути (встановити клас hidden для контейнеру autocomplete), 
+                      При натисканні на посилання одного із елементів .autocomplete-list 
+                        в полі вводу #size має встановитися value = Hamburger.sizes[chosenSize].name (chosenSize - data-size в посиланні), 
+                        має виникнути діалог у разі, якщо tbody таблиці .order-table не порожнє (не враховуючи tr.order-template) - чи продовжувати далі - у разі скасування більше нічого не виконувати,
+                        блок з .autocomplete-list має зникнути (встановити клас hidden для контейнеру autocomplete), 
                         в tbody таблиці .order-table встановитися єдиний рядок з даними Hamburger.sizes[chosenSize] : name, price, ccal, кількість amount поки що = 1;
-                        для кнопок #addtopping, #submitorder видалити атрибут disabled
+                        для кнопок #addtopping, #submitorder видалити атрибут disabled. По суті це і є метод addSize() із умови задачі.
                   </li>
                   <li>
-                      У tfoot таблиці .order-table при зміні tbody мають перерахуватися #totalprice = сума всіх добутків значень елементів .data-amount і .data-price таблиці, #totalccal = сума всіх значень елементів .data-ccal
+                      У tfoot таблиці .order-table при зміні tbody мають перерахуватися #totalprice = сума всіх добутків значень елементів td.data-amount і td.data-price таблиці, #totalccal = сума всіх значень елементів td.data-ccal. По суті як частина цього є метод calculateCalories() із умови зачадчі.
                   </li>
                   <li>
-                      При зміні числового поля #amount в tbody таблиці .order-table у першому рядку (tr) змінити значення .data-amount і перерахувати tfoot
+                      При зміні числового поля #amount в tbody таблиці .order-table у першому рядку (tr) змінити значення td.data-amount і перерахувати tfoot
                   </li>
                   <li>
                       По мірі вводу (keyup) в полі #topping, під ним мають перезаписуватися елементи вибору .autocomplete-list, контейнер .autocomplete-list-container має ставати видимий.
@@ -169,8 +169,8 @@
                       Якщо поле стає порожнє треба додати в .autocomplete-list всі імена Hamburger.stuffing.
                   </li>
                   <li>
-                      При натисканні на посилання 
-                        одного із елементів .autocomplete-list в полі вводу #topping має встановитися value = Hamburger.stuffing[chosenTopping].name (chosenTopping - data-stuffing в посиланні),
+                      При натисканні на посилання одного із елементів .autocomplete-list 
+                        в полі вводу #topping має встановитися value = Hamburger.stuffing[chosenTopping].name (chosenTopping - data-stuffing в посиланні),
                         блок з .autocomplete-list зникнути (встановити клас hidden для контейнеру autocomplete), 
                         в кнопці #addtopping має встановитися атрибут data-topping = chosenTopping; для кнопок #addtopping, #submitorder видалити атрибут disabled.
                   <li>
@@ -179,14 +179,14 @@
                       , тоді має додатися рядок tr з даними Hamburger.stuffing[chosenTopping] : name, price, ccal, amount = 1
                       , для цього tr встановити атрибут topping-key = chosenTopping
                       , додати в першу клітину td кнопку .remove і прив'язати до неї подію click з логікою, описаною в наступному пункті;
-                        у випадку якщо вже є tr з атрибутом topping-key = chosenTopping, тоді там збільшити значення .data-amount +1;
-                        перерахувати tfoot.
+                        у випадку якщо вже є tr з атрибутом [topping-key = chosenTopping], тоді там збільшити значення td.data-amount +1;
+                        перерахувати tfoot. По суті це є метод addTopping() в умові задачі
                   </li>
                   <li>
                       При натисканні на одну із кнопок .remove в таблиці .order-table - будь-якої, крім першої
                         якщо значення .data-amount більше 1, тоді зменшити це значення на 1;
                         якщо значення .data-amount = 1, тоді видалити батьківський tr для натиснутої кнопки;
-                        перерахувати tfoot.
+                        перерахувати tfoot. По суті це є методом removeTopping() із умови задачі
                   </li>
                   <li>
                       При натисканні на кнопку #submitorder має приховатися елемент .order-form , в tbody таблиці .order-table видалити всі кнопки .remove , в .order-form-container > h3 встановити текст "THANK YOU! YOUR ORDER WAS CONFIRMED"
