@@ -1,1 +1,10 @@
-Hamburger.outputMenu()
+Hamburger.outputMenu();
+Hamburger.calculateTotal();
+Hamburger.autocompleteSize();
+Hamburger.chooseSize();
+Hamburger.changeAmount();
+Hamburger.autocompleteTopping();
+Hamburger.chooseTopping();
+Hamburger.addTopping();
+Hamburger.removeTopping();
+Hamburger.submitOrder();
