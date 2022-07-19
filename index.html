@@ -151,7 +151,13 @@
           </div>
           <div class="whaat"><p>Яку поведінку очікуємо:</p>
               <ol>
-                  <li>
+                  <li> (calculate-order.js)
+                      У tfoot таблиці .order-table при зміні tbody мають перерахуватися 
+                      #totalprice = сума всіх добутків значень елементів td.data-amount і td.data-price таблиці, 
+                      #totalccal = сума всіх добутків значень елементів td.data-amount і td.data-ccal. 
+                      По суті як частина цього є метод calculateCalories() із умови зачадчі.
+                  </li>
+                  <li> (autocomplete-size.js)
                       По мірі вводу (keyup) в полі #size, під ним мають перезаписуватися елементи вибору .autocomplete-list, контейнер .autocomplete-list-container має ставати видимий.
                       Якщо введений текст є частиною рядка name із Hamburger.sizes, тоді в .autocomplete-list перезаписуються елементи на знайдені імена розмірів !! із збереженням структури .autocomplete-list-item (li > a > div) !!, в посиланнях також встановлюється атрибут data-size - відповідний ключ із Hamburger.sizes.
                       Якщо не знайдено жодного Hamburger.sizes , тоді в .autocomplete-list перезаписується один елемент з текстом "не знайдено" (не посилання, а текст), 
@@ -159,7 +165,7 @@
                       Клас error має скинутися з #size (через classList.toggle), якщо по мірі вводу в поле знову знайшлися Hamburger.sizes або поле стало попрожнє.
                       Якщо поле стає порожнє треба додати в .autocomplete-list всі імена Hamburger.sizes.
                   </li>
-                  <li>
+                  <li> (choose-size.js)
                       При натисканні на посилання одного із елементів .autocomplete-list 
                         в полі вводу #size має встановитися value = Hamburger.sizes[chosenSize].name (chosenSize - data-size в посиланні), 
                         має виникнути діалог у разі, якщо tbody таблиці .order-table не порожнє (не враховуючи tr.order-template) - чи продовжувати далі - у разі скасування більше нічого не виконувати,
@@ -167,16 +173,10 @@
                         в tbody таблиці .order-table встановитися єдиний рядок з даними Hamburger.sizes[chosenSize] : name, price, ccal, кількість amount поки що = 1;
                         для кнопок #addtopping, #submitorder видалити атрибут disabled. По суті це і є метод addSize() із умови задачі.
                   </li>
-                  <li>
-                      У tfoot таблиці .order-table при зміні tbody мають перерахуватися 
-                      #totalprice = сума всіх добутків значень елементів td.data-amount і td.data-price таблиці, 
-                      #totalccal = сума всіх добутків значень елементів td.data-amount і td.data-ccal. 
-                      По суті як частина цього є метод calculateCalories() із умови зачадчі.
-                  </li>
-                  <li>
+                  <li> (change-amount.js)
                       При зміні числового поля #amount в tbody таблиці .order-table у першому рядку (tr) змінити значення td.data-amount і перерахувати tfoot
                   </li>
-                  <li>
+                  <li> (autocomplete-topping.js)
                       По мірі вводу (keyup) в полі #topping, під ним мають перезаписуватися елементи вибору .autocomplete-list !! із збереженням структури .autocomplete-list-item (li > a > div) !!, контейнер .autocomplete-list-container має ставати видимий.
                       Якщо введений текст є частиною рядка name із Hamburger.stuffing, тоді в .autocomplete-list перезаписуються елементи на знайдені імена із stuffing, в посиланнях також встановлюється атрибут data-stuffing - відповідний ключ із Hamburger.stuffing.
                       Якщо не знайдено жодного Hamburger.stuffing , тоді в .autocomplete-list перезаписується один елемент з текстом "не знайдено" (не посилання, а текст), 
@@ -184,12 +184,12 @@
                       Клас error має скинутися з #topping (через classList.toggle), якщо по мірі вводу в поле знову знайшлися Hamburger.stuffing або поле стало попрожнє.
                       Якщо поле стає порожнє треба додати в .autocomplete-list всі імена Hamburger.stuffing.
                   </li>
-                  <li>
+                  <li> (choose-topping.js)
                       При натисканні на посилання одного із елементів .autocomplete-list 
                         в полі вводу #topping має встановитися value = Hamburger.stuffing[chosenTopping].name (chosenTopping - data-stuffing в посиланні),
                         блок з .autocomplete-list зникнути (встановити клас hidden для контейнеру autocomplete), 
                         в кнопці #addtopping має встановитися атрибут data-topping = chosenTopping; для кнопок #addtopping, #submitorder видалити атрибут disabled.
-                  <li>
+                  <li> (add-topping.js)
                       При натисканні на кнопку #addtopping 
                         в tbody таблиці .order-table якщо відсутній tr з атрибутом topping-key = chosenTopping
                       , тоді має додатися рядок tr з даними Hamburger.stuffing[chosenTopping] : name, price, ccal, amount = 1
@@ -198,13 +198,13 @@
                         у випадку якщо вже є tr з атрибутом [topping-key = chosenTopping], тоді там збільшити значення td.data-amount +1;
                         перерахувати tfoot. По суті це є метод addTopping() в умові задачі
                   </li>
-                  <li>
+                  <li> (remove-topping.js)
                       При натисканні на одну із кнопок .remove в таблиці .order-table - будь-якої, крім першої
                         якщо значення .data-amount більше 1, тоді зменшити це значення на 1;
                         якщо значення .data-amount = 1, тоді видалити батьківський tr для натиснутої кнопки;
                         перерахувати tfoot. По суті це є методом removeTopping() із умови задачі
                   </li>
-                  <li>
+                  <li> (submit-order.js)
                       При натисканні на кнопку #submitorder має приховатися елемент .order-form , в tbody таблиці .order-table видалити всі кнопки .remove , в .order-form-container > h3 встановити текст "THANK YOU! YOUR ORDER WAS CONFIRMED"
                   </li>
               </ol>
