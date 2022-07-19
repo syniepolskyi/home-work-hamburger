@@ -39,10 +39,13 @@
                           <div class="autocomplete-list-container">
                               <ul class="autocomplete-list">
                                   <li class="autocomplete-list-item">
-                                      <a href="#"><div>Example Item 1</div></a>
+                                      <a href="#"><div>Example Hamburger Size 1</div></a>
                                   </li>
                                   <li class="autocomplete-list-item">
-                                      <a href="#"><div>Example Item 2</div></a>
+                                      <a href="#"><div>Example Size 2</div></a>
+                                  </li>
+                                  <li class="autocomplete-list-item">
+                                      <a href="#"><div>Example Size 2</div></a>
                                   </li>
                               </ul>
                           </div>
@@ -61,10 +64,13 @@
                               <div class="autocomplete-list-container">
                                   <ul class="autocomplete-list">
                                       <li class="autocomplete-list-item">
-                                          <a href="#"><div>Example Item 1</div></a>
+                                          <a href="#"><div>Example Topping 1</div></a>
                                       </li>
                                       <li class="autocomplete-list-item">
-                                          <a href="#"><div>Example Item 2</div></a>
+                                          <a href="#"><div>Example Topping 2</div></a>
+                                      </li>
+                                      <li class="autocomplete-list-item">
+                                          <a href="#"><div>Example Topping 3</div></a>
                                       </li>
                                   </ul>
                               </div>
@@ -88,20 +94,27 @@
                           </thead>
                           <tbody>
                               <tr class="order-template">
+                                  <td></td>
+                                  <td class="data-name">Example hamburger size</td>
+                                  <td class="data-price">300</td>
+                                  <td class="data-amount">2</td>
+                                  <td class="data-ccal">100</td>
+                              </tr>
+                              <tr class="order-template">
                                   <td>
                                       <button type="button" class="remove">&#10060;</button>
                                   </td>
-                                  <td class="data-name">Example</td>
-                                  <td class="data-price">123</td>
-                                  <td class="data-amount">2</td>
-                                  <td class="data-ccal">100</td>
+                                  <td class="data-name">Example topping</td>
+                                  <td class="data-price">50</td>
+                                  <td class="data-amount">3</td>
+                                  <td class="data-ccal">10</td>
                               </tr>
                           </tbody>
                           <tfoot>
                               <tr>
                                   <th colspan="2">TOTAL</th>
-                                  <th colspan="2" id="totalprice">246</th>
-                                  <th id="totalccal">100</th>
+                                  <th colspan="2" id="totalprice">750</th>
+                                  <th id="totalccal">230</th>
                               </tr>
                           </tfoot>
                       </table>
@@ -140,7 +153,7 @@
               <ol>
                   <li>
                       По мірі вводу (keyup) в полі #size, під ним мають перезаписуватися елементи вибору .autocomplete-list, контейнер .autocomplete-list-container має ставати видимий.
-                      Якщо введений текст є частиною рядка name із Hamburger.sizes, тоді в .autocomplete-list перезаписуються елементи на знайдені імена розмірів, в посиланнях також встановлюється атрибут data-size - відповідний ключ із Hamburger.sizes.
+                      Якщо введений текст є частиною рядка name із Hamburger.sizes, тоді в .autocomplete-list перезаписуються елементи на знайдені імена розмірів !! із збереженням структури .autocomplete-list-item (li > a > div) !!, в посиланнях також встановлюється атрибут data-size - відповідний ключ із Hamburger.sizes.
                       Якщо не знайдено жодного Hamburger.sizes , тоді в .autocomplete-list перезаписується один елемент з текстом "не знайдено" (не посилання, а текст), 
                         для input #size застосуватися клас error; для кнопок #addtopping, #submitorder встановити атрибут disabled. 
                       Клас error має скинутися з #size (через classList.toggle), якщо по мірі вводу в поле знову знайшлися Hamburger.sizes або поле стало попрожнє.
@@ -155,13 +168,16 @@
                         для кнопок #addtopping, #submitorder видалити атрибут disabled. По суті це і є метод addSize() із умови задачі.
                   </li>
                   <li>
-                      У tfoot таблиці .order-table при зміні tbody мають перерахуватися #totalprice = сума всіх добутків значень елементів td.data-amount і td.data-price таблиці, #totalccal = сума всіх значень елементів td.data-ccal. По суті як частина цього є метод calculateCalories() із умови зачадчі.
+                      У tfoot таблиці .order-table при зміні tbody мають перерахуватися 
+                      #totalprice = сума всіх добутків значень елементів td.data-amount і td.data-price таблиці, 
+                      #totalccal = сума всіх добутків значень елементів td.data-amount і td.data-ccal. 
+                      По суті як частина цього є метод calculateCalories() із умови зачадчі.
                   </li>
                   <li>
                       При зміні числового поля #amount в tbody таблиці .order-table у першому рядку (tr) змінити значення td.data-amount і перерахувати tfoot
                   </li>
                   <li>
-                      По мірі вводу (keyup) в полі #topping, під ним мають перезаписуватися елементи вибору .autocomplete-list, контейнер .autocomplete-list-container має ставати видимий.
+                      По мірі вводу (keyup) в полі #topping, під ним мають перезаписуватися елементи вибору .autocomplete-list !! із збереженням структури .autocomplete-list-item (li > a > div) !!, контейнер .autocomplete-list-container має ставати видимий.
                       Якщо введений текст є частиною рядка name із Hamburger.stuffing, тоді в .autocomplete-list перезаписуються елементи на знайдені імена із stuffing, в посиланнях також встановлюється атрибут data-stuffing - відповідний ключ із Hamburger.stuffing.
                       Якщо не знайдено жодного Hamburger.stuffing , тоді в .autocomplete-list перезаписується один елемент з текстом "не знайдено" (не посилання, а текст), 
                         для input #topping застосуватися клас error; для кнопок #addtopping, #submitorder встановити атрибут disabled. 
