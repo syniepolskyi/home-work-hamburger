@@ -1,4 +1,4 @@
-  Hmburger.addTopping = function(){
+  Hamburger.addTopping = function(){
     //Your code here
     
   }
