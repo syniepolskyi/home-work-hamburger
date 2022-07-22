@@ -14,7 +14,6 @@ Hamburger.addTopping = function(){
     if (!trDataList.length){
       return ;
     }
-    Array.from(trDataList).forEach((el) => el.remove() );
     submitOrderBtn.removeAttribute("disabled");
     if(!toppTr){
       toppTr = document.createElement("TR");
