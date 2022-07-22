@@ -36,6 +36,7 @@ Hamburger.addTopping = function(){
   
   addToppingBtn.addEventListener("click", ev => {
       add( inputTopp.getAttribute("data-value") );
+      Hamburger.removeTopping();
   })
   
 }
