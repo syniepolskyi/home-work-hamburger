@@ -3,6 +3,7 @@ Hamburger.chooseSize = function(){
   const sizeAcList = inputSize.nextElementSibling.firstElementChild;
   const elemLinks = sizeAcList.querySelectorAll("a");
   const addToppingBtn = document.getElementById("addtopping");
+  const amountInput = document.getElementById("amount");
   const submitOrderBtn = document.getElementById("submitorder");
   const orderTableBody = document.querySelector(".order-table tbody");
   
@@ -19,6 +20,11 @@ Hamburger.chooseSize = function(){
     newTr.classList.add("active-data");
     newTr.innerHTML = trTemplate.innerHTML;
     newTr.firstElementChild.innerHTML = '';
+    newTr.children[1].innerText = Hamburger.sizes[sizeKey].name;
+    newTr.children[2].innerText = Hamburger.sizes[sizeKey].price;
+    newTr.children[3].innerText = '1';
+    amountInput.value = 1;
+    newTr.children[4].innerText = Hamburger.sizes[sizeKey].ccal;
     orderTableBody.appendChild(newTr);
     Hamburger.calculateTotal();
     sizeAcList.parentNode.classList.toggle("hidden", true);
