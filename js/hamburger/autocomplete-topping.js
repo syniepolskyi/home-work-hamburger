@@ -13,6 +13,7 @@ Hamburger.autocompleteTopping = function(){
   });
   
   const renderToppings = (filterStr = '') => {
+    addToppingBtn.setAttribute("disabled","disabled");
     const filteredToppings = allToppings.filter(el => 
       el.type.toLowerCase()
       .indexOf( filterStr.toLowerCase() ) >= 0
@@ -33,7 +34,6 @@ Hamburger.autocompleteTopping = function(){
     }
     inputTopping.classList.toggle("error", true);
     toppAcList.insertAdjacentHTML("beforeend", htmlTemplate);
-    addToppingBtn.setAttribute("disabled","disabled");
     submitOrderBtn.setAttribute("disabled","disabled");
     toppAcList.children[0].innerHTML = "<i>нічого не знайдено</i>";
   };
