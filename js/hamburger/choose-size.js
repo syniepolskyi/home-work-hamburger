@@ -16,7 +16,7 @@ Hamburger.chooseSize = function(){
     newTr.firstElementChild.innerHTML = '';
     orderTableBody.appendChild(newTr);
     Hamburger.calculateTotal();
-    sizeAcList.classList.toggle("hidden", true);
+    sizeAcList.parentNode.classList.toggle("hidden", true);
   };
   
   Array.from(elemLinks).forEach((el) => 
