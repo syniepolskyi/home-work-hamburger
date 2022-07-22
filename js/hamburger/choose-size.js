@@ -9,7 +9,7 @@ Hamburger.chooseSize = function(){
   const choose = (sizeKey) => {
     const trTemplate = document.querySelector("tr.order-template");
     const trDataList = document.querySelectorAll("tr.active-data");
-    if (!(trDataList.length && confirm("Перезаписати замовлення? Це видалить всі добавки"))){
+    if (trDataList.length && !confirm("Перезаписати замовлення? Це видалить всі добавки")){
       return ;
     }
     Array.from(trDataList).forEach((el) => el.remove() );
