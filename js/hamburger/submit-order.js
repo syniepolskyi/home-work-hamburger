@@ -4,6 +4,8 @@ Hamburger.submitOrder = function(){
   const submitOrderBtn = document.getElementById("submitorder");
   submitOrderBtn.addEventListener("click", (ev) => {
     h3Elem.innerText = "THANK YOU! YOUR ORDER WAS CONFIRMED";
+    const removeBtns = document.querySelectorAll(".order-table button.remove");
+    Array.from(removeBtns).forEach( el => el.remove() );
     orderForm.remove();
   });
 
