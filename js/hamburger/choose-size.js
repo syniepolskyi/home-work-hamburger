@@ -21,8 +21,10 @@ Hamburger.chooseSize = function(){
   
   Array.from(elemLinks).forEach((el) => 
     el.addEventListener("click", ev => {
-      ev.preventDefault();
-      choose( ev.target.getAttribute("data-size") );
+      if(ev.target.nodeName === "A"){
+        ev.preventDefault();
+        choose( ev.target.getAttribute("data-size") );
+      }
     })
   );
   
