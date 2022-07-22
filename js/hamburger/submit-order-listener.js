@@ -1,4 +1,4 @@
-Hamburger.submitOrder = function(){
+Hamburger.submitOrderListener = function(){
   const h3Elem = document.querySelector(".order-form-container > h3");
   const orderForm = document.querySelector(".order-form");
   const submitOrderBtn = document.getElementById("submitorder");
