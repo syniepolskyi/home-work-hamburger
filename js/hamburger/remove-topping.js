@@ -15,7 +15,8 @@ Hamburger.removeTopping = function(){
   
   Array.from(removeBtns)
     .forEach(el => {
-      if(el.classList.contains("click-handled")){
+      if(el.classList.contains("click-handled") 
+         || el.parentNode.parentNode.classList.contains("order-template")){
         return ;
       }
       el.classList.toggle("click-handled", true);
