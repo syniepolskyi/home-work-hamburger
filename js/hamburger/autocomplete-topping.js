@@ -1,7 +1,7 @@
 
 Hamburger.autocompleteTopping = function(){
   const inputTopping = document.getElementById("topping");
-  const toppAcList = inputTopping.nextElementSibling.firstElementChild;
+  const toppAcList = inputTopping.nextElementSibling.nextElementSibling.firstElementChild;
   const htmlTemplate = toppAcList.firstElementChild.outerHTML;
   const addToppingBtn = document.getElementById("addtopping");
   const submitOrderBtn = document.getElementById("submitorder");
