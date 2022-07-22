@@ -33,7 +33,10 @@ Hamburger.autocompleteSize = function(){
     inputSize.classList.toggle("error", true);
     sizeAcList.insertAdjacentHTML("beforeend", htmlTemplate);
     addToppingBtn.setAttribute("disabled","disabled");
-    submitOrderBtn.setAttribute("disabled","disabled");
+    const orderActiveTrs = document.querySelectorAll(".order-table .active-data");
+    if(!orderActiveTrs.length){
+      submitOrderBtn.setAttribute("disabled","disabled");
+    }
     sizeAcList.children[0].innerHTML = "<i>нічого не знайдено</i>";
   };
   
