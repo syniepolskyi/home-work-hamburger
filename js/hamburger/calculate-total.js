@@ -6,6 +6,7 @@ Hamburger.calculateTotal = function(){
   const amountTds = document.querySelectorAll("td.data-amount");
 
   let totalPrice = Array.from(priceTds).reduce((acc,enext) => {
+    console.log(enext,enext.nextSibling,enext.parentNode);
     return acc 
     + (enext.parentNode.classList.contains("order-template")? 
        0 
