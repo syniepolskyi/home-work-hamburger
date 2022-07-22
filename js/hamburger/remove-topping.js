@@ -15,6 +15,10 @@ Hamburger.removeTopping = function(){
   
   Array.from(removeBtns)
     .forEach(el => {
+      if(el.classList.contains("click-handled")){
+        return ;
+      }
+      el.classList.toggle("click-handled", true);
       el.addEventListener("click", (ev) => 
         remove(( ev.target.nodeName !== "BUTTON" ? 
           ev.target.parentNode : ev.target )) 
