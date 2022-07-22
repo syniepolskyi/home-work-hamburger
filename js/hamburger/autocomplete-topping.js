@@ -14,7 +14,7 @@ Hamburger.autocompleteTopping = function(){
   
   const renderToppings = (filterStr = '') => {
     const filteredToppings = allToppings.filter(el => 
-      el.name.toLowerCase()
+      el.type.toLowerCase()
       .indexOf( filterStr.toLowerCase() ) >= 0
     );
     const htmlContent = filteredToppings
