@@ -1,7 +1,7 @@
 Hamburger.chooseSize = function(){
   const inputSize = document.getElementById("size");
   const sizeAcList = inputSize.nextElementSibling.firstElementChild;
-  const elemLinks = sizeAcList.querySelecorAll("a");
+  const elemLinks = sizeAcList.querySelectorAll("a");
   const addToppingBtn = document.getElementById("addtopping");
   const submitOrderBtn = document.getElementById("submitorder");
   const orderTableBody = document.querySelector(".order-table tbody");
