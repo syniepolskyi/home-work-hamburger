@@ -5,9 +5,12 @@ Hamburger.chooseTopping = function(){
   const addToppingBtn = document.getElementById("addtopping");
   
   const choose = (stuffKey) => {
+    const trDataList = document.querySelectorAll("tr.active-data");
     inputTopp.value = Hamburger.stuffing[stuffKey].type;
-    inputTopp.setAttribute('data-value', stuffKey)
-    addToppingBtn.removeAttribute("disabled");
+    inputTopp.setAttribute('data-value', stuffKey);
+    if(trDataList.length){
+      addToppingBtn.removeAttribute("disabled");
+    }
     topppAcList.parentNode.classList.toggle("hidden", true);
   };
   
