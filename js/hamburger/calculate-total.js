@@ -11,13 +11,15 @@ Hamburger.calculateTotal = function(){
                                       : (parseInt(enext.innerText,10)
                                       * parseInt(enext.nextSibling.innerText,10))), 
   0);
-  let totalCcal = Array.from(ccalTds).reduce((acc,enext) => console.log(enext.parentNode,enext,enext.previousSibling),
-                                 acc 
-                                 + (enext.parentNode.classList.contains("order-template")? 
-                                 0 
-                                    : (parseInt(enext.innerText,10)
-                                    * parseInt(enext.previousSibling.innerText,10))), 
-  0);
+  let totalCcal = Array.from(ccalTds).reduce((acc,enext) => {
+    console.log(enext.parentNode,enext,enext.previousSibling);
+    return acc 
+    + (enext.parentNode.classList.contains("order-template")? 
+       0 
+       : (parseInt(enext.innerText,10)
+         * parseInt(enext.previousSibling.innerText,10))
+      ) 
+  }, 0);
   totalPriceTd.innerText = totalPrice;
   totalCcalTd.innerText = totalCcal;
 }
