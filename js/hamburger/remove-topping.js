@@ -11,6 +11,7 @@ Hamburger.removeTopping = function(){
       return ;
     }
     elTr.remove();
+    Hamburger.calculateTotal();
   };
   
   Array.from(removeBtns)
