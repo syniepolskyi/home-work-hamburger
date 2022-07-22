@@ -8,6 +8,7 @@ Hamburger.removeTopping = function(){
     if (amount > 1){
       amount--;
       amountTd.innerText = amount;
+      Hamburger.calculateTotal();
       return ;
     }
     elTr.remove();
