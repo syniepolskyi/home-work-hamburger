@@ -39,7 +39,7 @@ Hamburger.autocompleteSize = function(){
   
   renderSizes();
   inputSize.addEventListener("keyup", (ev) => {
-    sizeAcList.classList.toggle("hidden", false);
+    sizeAcList.parentNode.classList.toggle("hidden", false);
     renderSizes(inputSize.value);
   });
 }
