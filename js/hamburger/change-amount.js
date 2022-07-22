@@ -3,7 +3,7 @@ Hamburger.changeAmount = function(){
 
   amountInput.addEventListener("change", (ev) => {
     const tdAmount = document.querySelector(".order-table tbody tr.active-data td.data-amount");
-    if (tdAmount){
+    if (tdAmount && parseInt(ev.target.value,10) ){
       tdAmount.innerText = ev.target.value;
       Hamburger.calculateTotal();
     }
