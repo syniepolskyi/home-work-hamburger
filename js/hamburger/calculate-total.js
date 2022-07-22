@@ -6,13 +6,12 @@ Hamburger.calculateTotal = function(){
   const amountTds = document.querySelectorAll("td.data-amount");
 
   let totalPrice = Array.from(priceTds).reduce((acc,enext) => {
-    console.log(enext,enext.nextSibling,enext.parentNode);
     return acc 
     + (enext.parentNode.classList.contains("order-template")? 
        0 
        : (parseInt(enext.innerText,10)
-         * parseInt(enext.nextSibling.innerText,10))
-      ) 
+         * parseInt(enext.nextElementSibling.innerText,10))
+      ); 
   }, 0);
   
   let totalCcal = Array.from(ccalTds).reduce((acc,enext) => {
@@ -20,7 +19,7 @@ Hamburger.calculateTotal = function(){
     + (enext.parentNode.classList.contains("order-template")? 
        0 
        : (parseInt(enext.innerText,10)
-         * parseInt(enext.previousSibling.innerText,10))
+         * parseInt(enext.previousElementSibling.innerText,10))
       ) 
   }, 0);
   
