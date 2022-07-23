@@ -15,7 +15,7 @@ Hamburger.chooseTopping = function(){
   };
   
   Array.from(elemLinks).forEach((el) => 
-    el.addEventListener("click", ev => {
+    el.addEventListener("mousedown", ev => {
         choose( ev.target.parentNode.getAttribute("data-stuffing") );
         ev.preventDefault();
     })
