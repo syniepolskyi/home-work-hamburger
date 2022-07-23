@@ -34,6 +34,7 @@ Hamburger.chooseSize = function(){
     el.addEventListener("click", ev => {
         const elem = ev.target;
         let dataSize = elem.getAttribute("data-size");
+        console.log(dataSize);
         if(!dataSize){
           dataSize = elem.parentNode.getAttribute("data-size")
         }
