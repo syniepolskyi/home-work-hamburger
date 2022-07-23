@@ -31,7 +31,7 @@ Hamburger.chooseSize = function(){
   };
   
   Array.from(elemLinks).forEach((el) => 
-    el.addEventListener("click", ev => {
+    el.addEventListener("mousedown", ev => {
         const elem = ev.target;
         let dataSize = elem.getAttribute("data-size");
         console.log(dataSize);
